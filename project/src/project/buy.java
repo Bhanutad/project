@@ -25,7 +25,7 @@ class buy{
     static double total = 0 , down = 0 , totalprice = 0 ; 
     static String name , phone ;
     type t = new type();
-    public void conferm(){
+    public void confirm(){
         Scanner ip4 = new Scanner(System.in);
         System.out.println("\n- Are you Conferm to buy the House//Condominium -");
         System.out.println("Press Y : For Conferm");
@@ -39,7 +39,7 @@ class buy{
     }else if(choosef.equalsIgnoreCase("N")){
         choose ch = new choose();
         ch.buyorrent();
-    }else{ conferm();}
+    }else{ confirm();}
 }
 }
 class payby extends buy implements cash , installment{
@@ -55,7 +55,7 @@ class payby extends buy implements cash , installment{
         switch(choosep){
             case 1: paycash(); break;
             case 2: payinstallment(); break;
-            case 0: conferm(); break;
+            case 0: confirm(); break;
             default: payby(); break;
         }
     }

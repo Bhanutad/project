@@ -59,9 +59,9 @@ class choose {
             choosebor = ip2.nextInt();
     }
     if(choosebor == 1 ){
-        b.conferm();
+        b.confirm();
     }else if(choosebor == 2){
-        r.conferm();
+        r.confirm();
     }else{ houseorcon();
     }
     }

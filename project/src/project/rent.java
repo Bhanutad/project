@@ -16,7 +16,7 @@ class rent {
     buy b = new buy();
     type t = new type();
     private String choosef ;
-    public void conferm(){
+    public void confirm(){
         Scanner ip4 = new Scanner(System.in);
         System.out.println("\n- Are you Conferm to rent the House//Condominium -");
         System.out.println("Press Y : For Conferm");
@@ -28,7 +28,7 @@ class rent {
     }else if(choosef.equalsIgnoreCase("N")){
         choose ch = new choose();
         ch.buyorrent();
-    }else{ conferm();}
+    }else{ confirm();}
 }
 }
 class fillin extends rent{
