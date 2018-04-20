@@ -9,27 +9,28 @@ package project;
  *
  * @author Admin
  */
+import java.util.ArrayList;
 import java.util.Scanner;
 public class type {
     static double price = 0 , priceone = 0 , pricetwo = 0 , pricesmall = 0 , pricebig = 0 ;
-    static int n , numh , numc ;
+    static int h , x , numc ;
+    static String[] numh ;
     Scanner ip12 = new Scanner(System.in);
     public void onestairbuy(){
-        int[] onestair = new int[13];
-        for(int h = 1 ; h <= onestair.length ; h++){
-            System.out.println("["+ h +"]"+"\t:"); 
+        ArrayList onestair = new ArrayList(13);
+        for( h = 1 ; h <= 13; h++){
+            System.out.println("["+ h +"]"+"\t: "+numh); 
         }
         System.out.print("Choose your House: ");
-        numh = ip12.nextInt();
-        onestair[n+1] = numh ;
-        if(onestair[n+1] == numh){
-            System.out.println("-- This is ready for you --");
-        }
+        x = ip12.nextInt();
+        numh[x] = "Served" ;
+        onestair.add(numh);
+        
         price = priceone + 4300000.0 ;
         buy b = new buy();
         b.confirm();
     } 
-        public void twostairbuy(){
+    public void twostairbuy(){
         String[] twostair = new String[30];
         for(int h = 14 ; h <= twostair.length ; h++){
             System.out.println("["+ h +"]"+"\t:"); 
@@ -37,24 +38,17 @@ public class type {
         price = pricetwo + 5500000.0 ;
         buy b = new buy();
         b.confirm();
-}
-        
-        public void onestairrent(){
+    }     
+    public void onestairrent(){
         int[] onestair = new int[13];
         for(int h = 1 ; h <= onestair.length ; h++){
             System.out.println("["+ h +"]"+"\t:"); 
-        }
-        System.out.print("Choose your House: ");
-        numh = ip12.nextInt();
-        onestair[n+1] = numh ;
-        if(onestair[n+1] == numh){
-            System.out.println("-- This is ready for you --");
         }
         price = priceone + 7800.0 ;
         payby pb = new payby();
         pb.sure();
     } 
-        public void twostairrent(){
+    public void twostairrent(){
         String[] twostair = new String[30];
         for(int h = 14 ; h <= twostair.length ; h++){
             System.out.println("["+ h +"]"+"\t:"); 
@@ -65,7 +59,7 @@ public class type {
 }
         
         
-        public void smallroombuy(){
+    public void smallroombuy(){
         String smallroom[] = new String[13];
         for(int c = 1 ; c <= smallroom.length ; c++){
             System.out.println("["+ c +"]"+"\t:"); 
@@ -74,7 +68,7 @@ public class type {
         buy b = new buy();
         b.confirm();
     } 
-        public void bigroombuy(){
+    public void bigroombuy(){
         String bigroom[] = new String[30];
         for(int c = 14 ; c <= bigroom.length ; c++){
             System.out.println("["+ c +"]"+"\t:"); 
@@ -83,8 +77,7 @@ public class type {
         buy b = new buy();
         b.confirm();
 }
-        
-        public void smallroomrent(){
+    public void smallroomrent(){
         String smallroom[] = new String[13];
         for(int c = 1 ; c <= smallroom.length ; c++){
             System.out.println("["+ c +"]"+"\t:"); 
@@ -93,7 +86,7 @@ public class type {
         payby pb = new payby();
         pb.sure();
     } 
-        public void bigroomrent(){
+    public void bigroomrent(){
         String bigroom[] = new String[30];
         for(int c = 14 ; c <= bigroom.length ; c++){
             System.out.println("["+ c +"]"+"\t:"); 
