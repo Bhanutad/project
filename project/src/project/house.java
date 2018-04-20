@@ -40,7 +40,7 @@ abstract class house {
         sh.detailrent();
     }else{ ch.houseorcon(); }
     }
-    public void selecthouse(){
+    public void selecthousebuy(){
             type t = new type();
             System.out.println("\n------------- House -------------");
             Scanner ip3 = new Scanner(System.in);
@@ -58,9 +58,32 @@ abstract class house {
             chooseh = ip3.nextInt();
     }
     if(chooseh == 1 ){
-        t.onestair();
+        t.onestairbuy();
     }else if(chooseh == 2){
-        t.twostair();
+        t.twostairbuy();
+    }else{ house(); }
+    }
+    public void selecthouserent(){
+            type t = new type();
+            System.out.println("\n------------- House -------------");
+            Scanner ip3 = new Scanner(System.in);
+            System.out.println("Press 1:For Single 1Stair House");
+            System.out.println("Press 2:For Single 2Stair House");
+            System.out.println("Press 0:For Back");
+            System.out.print("Press Number: ");
+            chooseh = ip3.nextInt();
+            while(!(chooseh == 1 || chooseh == 2 || chooseh == 0)){
+            System.out.println("\n- Please Press Number! -");
+            System.out.println("Press 1:For Single 1Stair House");
+            System.out.println("Press 2:For Single 2Stair House");
+            System.out.println("Press 0:For Back");
+            System.out.print("Press Number: ");
+            chooseh = ip3.nextInt();
+    }
+    if(chooseh == 1 ){
+        t.onestairrent();
+    }else if(chooseh == 2){
+        t.twostairrent();
     }else{ house(); }
     }
     }
@@ -92,7 +115,7 @@ class selecth extends house {
         System.out.println("--------- 5.5 Million ฿ --------"); 
         System.out.println("________________________________");
         
-       super.selecthouse();
+       super.selecthousebuy();
     }
     public void detailrent(){
         System.out.println("_______________________________");
@@ -117,6 +140,6 @@ class selecth extends house {
         System.out.println("------- 8,900 Baht/Month -------"); 
         System.out.println("________________________________");
         
-       super.selecthouse();
+       super.selecthouserent();
     }
 }

@@ -20,16 +20,15 @@ interface installment{
 class buy{
     ArrayList arrname = new ArrayList();
     ArrayList arrphone = new ArrayList();
-    private String choosef ;
-    static public int choosep ;
+    public String choosef ;
     static double total = 0 , down = 0 , totalprice = 0 ; 
     static String name , phone ;
-    type t = new type();
+    type t = new type();  
     public void confirm(){
         Scanner ip4 = new Scanner(System.in);
         System.out.println("\n- Are you Conferm to buy the House//Condominium -");
         System.out.println("Press Y : For Conferm");
-        System.out.println("Press N : For Back");
+        System.out.println("Press N : For Cancell");
         System.out.print("Y / N   : ");
         choosef = ip4.nextLine();
     
@@ -38,11 +37,14 @@ class buy{
         pb.payby();
     }else if(choosef.equalsIgnoreCase("N")){
         choose ch = new choose();
-        ch.buyorrent();
+        ch.houseorcon();
     }else{ confirm();}
 }
 }
+
+
 class payby extends buy implements cash , installment{
+    static private int choosep ;
     public void payby(){
         Scanner ip5 = new Scanner(System.in);
         System.out.println("\n- Do you want to pay by Cash//installment -");
@@ -59,6 +61,7 @@ class payby extends buy implements cash , installment{
             default: payby(); break;
         }
     }
+    
     public void paycash(){
         Scanner ip6 = new Scanner(System.in);
         System.out.println("______________________________\n");
@@ -73,7 +76,8 @@ class payby extends buy implements cash , installment{
         total = t.price ;   
         calpaycash cpc = new calpaycash();
         cpc.calpaycash();
-    } 
+    }
+    
     public void payinstallment(){ 
         Scanner ip7 = new Scanner(System.in);
         System.out.println("______________________________\n");
@@ -91,10 +95,43 @@ class payby extends buy implements cash , installment{
         totalprice = t.price - down ;
         slpayinstallment payin = new slpayinstallment();
     }
+    
+    public void sure(){
+        Scanner ip4 = new Scanner(System.in);
+        System.out.println("\n- Are you Conferm to rent the House//Condominium -");
+        System.out.println("Press Y : For Conferm");
+        System.out.println("Press N : For Cancell");
+        System.out.print("Y / N   : ");
+        choosef = ip4.nextLine();
+       if(choosef.equalsIgnoreCase("Y")){
+           fillin();
+      }else if(choosef.equalsIgnoreCase("N")){
+          choose ch = new choose();
+          ch.houseorcon();
+      }else{ sure();}
 }
+    
+    public void fillin(){
+        Scanner ip11 = new Scanner(System.in);
+        System.out.println("______________________________\n");
+        System.out.print("Enter Your Name: ");
+        name = ip11.nextLine();
+        arrname.add(name);
+        System.out.print("Phone number: ");
+        phone = ip11.nextLine();
+        arrphone.add(phone);
+        System.out.println("- You Have to pay in the First month -");
+        System.out.println("Total is: "+t.price+" Baht");
+        total = t.price ;   
+        calpaycash cpc = new calpaycash();
+        cpc.calpaycash();
+    }
+}
+
+
 class slpayinstallment{
     calpayin cpi = new calpayin();
-    String press ;
+    private String press ;
     slpayinstallment(){
         do{
         Scanner ip8 = new Scanner(System.in);

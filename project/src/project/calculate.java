@@ -25,8 +25,6 @@ abstract class calculate {
         System.out.println("==================================");
         System.out.println("Name            :"+pb.name);
         System.out.println("1:House|2:Condo : "+ch.choosehoc);
-        System.out.println("1:Buy  |2:Rent  : "+ch.choosebor);
-        System.out.println("Pay by 1:cash |2:installment : "+pb.choosep);
         System.out.println("Total : "+t.price+" Baht");
         System.out.println("Total Down payment: "+pb.down+" Baht");
         System.out.println("Cash  : "+money+" Baht");

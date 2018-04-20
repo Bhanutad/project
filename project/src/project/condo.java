@@ -41,7 +41,7 @@ abstract class condo {
     }else { ch.houseorcon(); }
     }
     
-    public void selectcondo(){
+    public void selectcondobuy(){
         type t = new type();
             selectc sc = new selectc();
             System.out.println("\n----------- Condominium -----------");
@@ -61,9 +61,34 @@ abstract class condo {
             choosec = ip10.nextInt();
     }
     if(choosec == 1 ){
-        t.smallroom();
+        t.smallroombuy();
     }else if(choosec == 2){
-        t.bigroom();
+        t.bigroombuy();
+    }else{ condo(); }
+    }
+    public void selectcondorent(){
+        type t = new type();
+            selectc sc = new selectc();
+            System.out.println("\n----------- Condominium -----------");
+            Scanner ip10 = new Scanner(System.in);
+            System.out.println("Press 1:For Small room");
+            System.out.println("Press 2:For Big   room");
+            System.out.println("Press 0:For Back");
+            System.out.print("Press Number: ");
+            choosec = ip10.nextInt();
+    
+    while(!(choosec == 1 || choosec == 2 || choosec == 0)){
+            System.out.println("\n- Please Press Number! -");
+            System.out.println("Press 1:For Small room");
+            System.out.println("Press 2:For Big   room");
+            System.out.println("Press 0:For Back");
+            System.out.print("Press Number: ");
+            choosec = ip10.nextInt();
+    }
+    if(choosec == 1 ){
+        t.smallroomrent();
+    }else if(choosec == 2){
+        t.bigroomrent();
     }else{ condo(); }
     }
     }
@@ -93,7 +118,7 @@ class selectc extends condo {
         System.out.println("---------- 3 Million ฿ ---------"); 
         System.out.println("________________________________");
         
-       super.selectcondo();
+       super.selectcondobuy();
     }
     public void detailrent(){
         System.out.println("_______________________________");
@@ -116,6 +141,6 @@ class selectc extends condo {
         System.out.println("------- 5,900 Baht/Month -------"); 
         System.out.println("________________________________");
         
-       super.selectcondo();
+       super.selectcondorent();
     }
 }
