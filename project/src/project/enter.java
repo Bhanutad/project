@@ -41,9 +41,12 @@ class login extends buy{
         do{ 
             Scanner user = new Scanner(System.in);
             System.out.println("_____________________________________");
-            System.out.print("\nUsername : ");
+            System.out.println("\nEnter nn : For Back");
+            System.out.print("Username : ");
             login1 = user.nextLine();
-    
+            if(login1.equalsIgnoreCase("nn")){
+            enter e = new enter();
+        }
             Scanner pass = new Scanner(System.in);
             System.out.print("Password : ");
             login2 = pass.nextLine();
