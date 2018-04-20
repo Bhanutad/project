@@ -47,7 +47,6 @@ class login extends buy{
             Scanner pass = new Scanner(System.in);
             System.out.print("Password : ");
             login2 = pass.nextLine();
-    
         if( !(login1.equals(b.name))){
                     System.out.println ("   Your username does't exist ");
                     System.out.println ("------- Please try again -------");
@@ -64,4 +63,8 @@ class login extends buy{
             System.out.println ("------login successful------");
             System.out.println ("");    
     }
+}
+
+class logout{
+    
 }
