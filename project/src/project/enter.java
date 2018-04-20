@@ -50,24 +50,21 @@ class login extends buy{
             Scanner pass = new Scanner(System.in);
             System.out.print("Password : ");
             login2 = pass.nextLine();
+            //for(int i = 0 ; i < arrname.size() ; i ++){
         if( !(login1.equals(b.name))){
                     System.out.println ("   Your username does't exist ");
                     System.out.println ("------- Please try again -------");
         }else if((login1.equals(b.name)&&!login2.equals(b.phone))){
-                        System.out.println ("    Your password is wrong     ");
-                        System.out.println ("------- Please try again -------");
+                    System.out.println ("    Your password is wrong     ");
+                    System.out.println ("------- Please try again -------");
         }
-        
+            //}
         }while(!(login1.equals(b.name) && login2.equals(b.phone))); //get back to login
     
         if(login1.equals(b.name) && login2.equals(b.phone)){
-            System.out.println("\nCustumer "+login1);
+                System.out.println ("------login successful------");
         }
-            System.out.println ("------login successful------");
-            System.out.println ("");    
+            it i = new it(name , phone);
+            i.information();
     }
-}
-
-class logout{
-    
 }

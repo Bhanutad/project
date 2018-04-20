@@ -10,7 +10,7 @@ package project;
  * @author Admin
  */
 import java.util.Scanner;
-abstract class calculate {
+class calculate {
    static double money , total , percent = 0 , permonth = 0 , peryear = 0 , change = 0 ;
    static int choosehoc , choosebor , choosep;
    static String name ;

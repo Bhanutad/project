@@ -27,8 +27,8 @@ class buy{
     public void confirm(){
         Scanner ip4 = new Scanner(System.in);
         System.out.println("\n- Do you Confirm to buy the House//Condominium -");
-        System.out.println("Press Y : For Conferm");
-        System.out.println("Press N : For Cancell");
+        System.out.println("Press Y : For Confirm");
+        System.out.println("Press N : For Cancel");
         System.out.print("Y / N   : ");
         choosef = ip4.nextLine();
     
